@@ -1,6 +1,6 @@
 # FuzzyPixel Maya Custom Submitter
 
-FuzzyPixel is an AWS ‘customer zero’ team, working on real world productions to help design, prototype and test AWS services and features before they are released. This folder holds the bundles and scripts for the Maya custom submitter the FuzzyPixel team developed during our [Animating Rose production](https://www.youtube.com/watch?v=Smr8pB6FJ5w). The requirements for our custom submitter were:
+FuzzyPixel is an AWS ‘customer zero’ team, working on real world productions to help design, prototype and test AWS services and features before they are released. This folder holds the bundles and scripts for the Maya custom submitter the FuzzyPixel team developed during our most recent production. The requirements for our custom submitter were:
 
 1. **Update Project and Output Paths** : We have a Maya Launcher that dynamically determines the Project and Output Paths of scenes when they are opened. We wanted these fields to be automatically populated when the submitter is opened.
 2. **Re-Organize GUI**: The Deadline Cloud Maya integrated submitter organizes GUI controls underneath four different tabs. Our team wanted to reorganize frequently used controls and place them underneath one major RenderSettings tab.

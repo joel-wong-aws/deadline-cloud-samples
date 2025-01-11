@@ -68,6 +68,7 @@ class mayaSubmitterUI(QtCore.QObject):
         ui_file = (self.bp.maya_tools_path / "maya_fp_maya_submitter.ui").as_posix()
         ui_file = QtCore.QFile(ui_file)
         ui_file.open(QtCore.QFile.ReadOnly)
+        self.current_render_layer = cmds.editRenderLayerGlobals(query=True, currentRenderLayer=True)
 
         loader = QtUiTools.QUiLoader()
         self.window = loader.load(ui_file)
@@ -124,6 +125,7 @@ class mayaSubmitterUI(QtCore.QObject):
         self.get_login_status()
         self.init_render_layer_tree()
         self.set_render_layer_tree()
+        cmds.editRenderLayerGlobals(currentRenderLayer=self.current_render_layer)
 
     def delete_instance(self):
         if self.__class__.instance is not None:
@@ -234,21 +236,16 @@ class mayaSubmitterUI(QtCore.QObject):
         """
         Get the render camera
         """
+        is_renderable = False
         cameras = cmds.listCameras()
-        render_cam_list = []
         render_cam = ""
-
+    
         for item in cameras:
-            if cmds.objExists(item + "Shape.renderable"):
-                cmds.setAttr(item + "Shape.renderable", 0)
-
-        for item in cameras:
-            if "shotCam" in item:
-                if cmds.objExists(item + "Shape.renderable"):
-                    render_cam_list.append(item)
-                    cmds.setAttr(item + "Shape.renderable", 1)
+            if cmds.objExists(item+"Shape.renderable"):
+                is_renderable = cmds.getAttr(f'{item}Shape.renderable')
+                if is_renderable:
                     render_cam = item
-        return render_cam
+                    return render_cam
 
     def get_nondefault_render_layers(self, test_renderable) -> list:
         """
