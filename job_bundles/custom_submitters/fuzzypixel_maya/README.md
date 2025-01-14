@@ -1,4 +1,4 @@
-# FuzzyPixel Maya Custom Submitter
+# tFuzzyPixel Maya Custom Submitter
 
 FuzzyPixel is an AWS ‘customer zero’ team, working on real world productions to help design, prototype and test AWS services and features before they are released. This folder holds the bundles and scripts for the Maya custom submitter the FuzzyPixel team developed during our most recent production. The requirements for our custom submitter were:
 
@@ -8,7 +8,7 @@ FuzzyPixel is an AWS ‘customer zero’ team, working on real world productions
 4. **Fleet Custom Attribute** : We wanted to allow users to choose whether their jobs would run on a spot or on demand instance.
 5. **Render Layer Control** : Users wanted to be able to activate/deactivate render layers and control both image resolution and frame range for each render layer.
 
-Requirements 1 and 3 can be achieved by creating a job bundle and then using deadline bundle gui-submit. If you'd like to ease into customizing submitter workflows, please start with this [blogpost](https://quip-amazon.com/C3NfA3bjnded/Blog-Post). Requirements 2, 4 and 5, are not easily achieved via bundle editing for the following reasons:
+Requirements 1 and 3 can be achieved by creating a job bundle and then using deadline bundle gui-submit. Requirements 2, 4 and 5, are not easily achieved via bundle editing for the following reasons:
 
 1. **Tab Reorganization**: Addition and removal of tabs from the Deadline Cloud Maya integrated submitter cannot be achieved via .yaml editing.
 2. **QTree Widget**: We wanted to use a QTree Widget control to display layers, and this control is not available as a job template UI control.
