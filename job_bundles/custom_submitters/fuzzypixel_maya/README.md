@@ -1,4 +1,4 @@
-# tFuzzyPixel Maya Custom Submitter
+# FuzzyPixel Maya Custom Submitter
 
 FuzzyPixel is an AWS ‘customer zero’ team, working on real world productions to help design, prototype and test AWS services and features before they are released. This folder holds the bundles and scripts for the Maya custom submitter the FuzzyPixel team developed during our most recent production. The requirements for our custom submitter were:
 
